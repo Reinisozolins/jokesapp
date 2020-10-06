@@ -8,9 +8,17 @@ public class JokesServiceImpl  implements JokeService{
 
     private final ChuckNorrisQuotes chuckNorrisQuotes;
 
-    public  JokesServiceImpl(){
-        this.chuckNorrisQuotes = new ChuckNorrisQuotes();
+//    public  JokesServiceImpl(){
+//        this.chuckNorrisQuotes = new ChuckNorrisQuotes();
+//    }
+//
+
+//    constructor based injection
+
+    public JokesServiceImpl(ChuckNorrisQuotes chuckNorrisQuotes) {
+        this.chuckNorrisQuotes = chuckNorrisQuotes;
     }
+
     @Override
     public String getJoke() {
         return chuckNorrisQuotes.getRandomQuote();
